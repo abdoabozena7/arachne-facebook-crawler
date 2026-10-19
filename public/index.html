@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Comments · Arachne</title><link rel="stylesheet" href="/styles.css"><script src="/dashboard.js" defer></script></head>
+<body>
+<main class="panel">
+  <header><h1>Comments<span class="brand">ARACHNE</span></h1><p id="fixture-note" class="fixture-note" hidden>Test fixture · not Facebook data</p></header>
+  <form id="crawl-form">
+    <label for="source-url">Post link</label>
+    <textarea id="source-url" rows="3" required spellcheck="false" autocomplete="off" placeholder="Paste a Facebook post link" aria-label="Post link">https://www.facebook.com/photo/?fbid=1222812841257009</textarea>
+    <button id="start" type="submit">Start</button>
+  </form>
+  <p id="status" class="status" role="status" aria-live="polite">Ready.</p>
+  <section class="collection" aria-labelledby="collection-title">
+    <div class="collection-heading"><h2 id="collection-title">Collection</h2><span id="record-count">0</span></div>
+    <p id="empty" class="empty">Collected comments will appear here.</p>
+    <ol id="record-list" aria-label="Collected comments" aria-live="polite" aria-relevant="additions"></ol>
+    <a id="download" class="download" hidden>Save JSON</a>
+  </section>
+</main>
+</body>
+</html>

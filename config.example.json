@@ -1,0 +1,19 @@
+{
+  "port": 4318,
+  "openDashboard": true,
+  "runsDir": "runs",
+  "defaults": {
+    "url": "https://www.facebook.com/photo/?fbid=1222812841257009",
+    "collectionTarget": "comments",
+    "browserMode": "fresh",
+    "publicOnly": true,
+    "visibleOnly": false,
+    "keepBrowserOpen": true,
+    "maxPosts": 200,
+    "animationSpeed": 0.85,
+    "operationDelayMs": 0,
+    "idleRoundLimit": 5,
+    "recordVideo": false,
+    "screenshots": false
+  }
+}

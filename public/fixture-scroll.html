@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>TEST FIXTURE — scrollable comments</title><style>
+body{margin:0;font:16px/1.6 Arial,sans-serif;background:white;color:#111}header{padding:18px 26px;background:#fff5bf;font-weight:bold;border-bottom:1px solid #c8b66c}.layout{display:grid;grid-template-columns:1fr minmax(330px,430px);gap:24px;padding:24px}.photo{background:#f0f0f0;min-height:430px;padding:25px}.pane{height:430px;overflow-y:auto;border:2px solid #222;scroll-behavior:smooth;overscroll-behavior:contain}.post{margin:0;padding:17px 20px;border-bottom:1px solid #ddd;min-height:118px}.post p{margin:8px 0}.post a{font-size:12px;color:#333}button{margin:14px;padding:12px;font-size:15px}h1{font-size:22px}
+</style></head><body><header>TEST FIXTURE / NOT FACEBOOK DATA — comments below the fold and delayed load-more</header><div class="layout"><div class="photo"><h1>Controlled source</h1><p>The document stays still. Only the comment pane should scroll.</p></div><section><h2>Comments</h2><div id="comments" class="pane" aria-label="Scrollable fixture comments"></div></section></div><script>
+const pane=document.getElementById('comments');
+function add(from,to){for(let i=from;i<=to;i++){const article=document.createElement('article');article.className='post';article.setAttribute('role','article');article.setAttribute('data-fixture-comment','');article.innerHTML='<a href="/fixture?target=comments&scroll=1&post=scroll-post&comment_id=scroll-comment-'+i+'">Source '+i+'</a><p data-comment-text>Controlled scrolling comment '+i+'. This text is really in the local document.</p>';pane.append(article);}}
+add(1,8);
+const button=document.createElement('button');button.textContent='View more comments';pane.append(button);
+button.onclick=()=>{button.disabled=true;button.textContent='Loading comments…';setTimeout(()=>{button.remove();add(9,12);pane.dataset.loadedMore='true';},400);};
+</script></body></html>

@@ -1,0 +1,11 @@
+node_modules/
+.runtime/
+dist/
+runs/
+output/
+*.log
+.env
+.env.*
+!.env.example
+config.json
+companion/overlay.js
